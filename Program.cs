@@ -109,6 +109,18 @@ namespace LinqIntro
             //Aggregation method
             int sum = numbers.Sum();
             double average = numbers.Average();
+            numbers.Sort();
+            //sort method returns array
+
+            //Order by:
+
+            //list of things like buildings... wanna sort them by number of stories
+
+            List<Building> orderedByStories = nashville.Buildings
+                .OrderBy(building => building.Stories)
+                .ToList();
+            //in the callback function you tell it what you want it to order by. its ascending by default 
+            //how did we do it in JS? ... by sort
         }
     }
 }
