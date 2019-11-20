@@ -113,7 +113,6 @@ namespace LinqIntro
             //sort method returns array
 
             //Order by:
-
             //list of things like buildings... wanna sort them by number of stories
 
             List<Building> orderedByStories = nashville.Buildings
@@ -121,6 +120,10 @@ namespace LinqIntro
                 .ToList();
             //in the callback function you tell it what you want it to order by. its ascending by default 
             //how did we do it in JS? ... by sort
+
+            double averageHeight = nashville.Buildings
+                .Select(building => building.Stories)
+                .Average();
         }
     }
 }
