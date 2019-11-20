@@ -53,6 +53,74 @@ namespace LinqIntro
                 return $"The number is {num}";
             }).ToList();
 
+            City nashville = new City()
+            {
+                Name = "Nashville"
+            };
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "NSS Building",
+                    Stories = 5,
+                    Address = "301 Plus Park Blvd"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "TPAC",
+                    Stories = 23,
+                    Address = "505 Deaderick Street"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "1505",
+                    Stories = 6,
+                    Address = "1505 Demonbreun Street"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "The Frist",
+                    Stories = 3,
+                    Address = "919 Broadway"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "The Batman Building",
+                    Stories = 33,
+                    Address = "333 Commerce Street"
+            });
+
+            //better example for Where and Select
+            //find only the buildings that haveless than 10 stories?
+            List<Building> shortBuildings = nashville.Buildings.Where(Building =>
+            {
+                bool isShort = Building.Stories < 10;
+                return isShort;
+            }).ToList();
+
+            List<string> nashvilleAddresses = nashville.Buildings.
+            Select(building => building.Address).ToList();
+
+            //select is equivalent of map so want string back
+
+            //Aggregation method
+            int sum = numbers.Sum();
+            double average = numbers.Average();
+            numbers.Sort();
+            //sort method returns array
+
+            //Order by:
+
+            //list of things like buildings... wanna sort them by number of stories
+
+            List<Building> orderedByStories = nashville.Buildings
+                .OrderBy(building => building.Stories)
+                .ToList();
+            //in the callback function you tell it what you want it to order by. its ascending by default 
+            //how did we do it in JS? ... by sort
         }
     }
 }
