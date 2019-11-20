@@ -92,6 +92,23 @@ namespace LinqIntro
                     Stories = 33,
                     Address = "333 Commerce Street"
             });
+
+            //better example for Where and Select
+            //find only the buildings that haveless than 10 stories?
+            List<Building> shortBuildings = nashville.Buildings.Where(Building =>
+            {
+                bool isShort = Building.Stories < 10;
+                return isShort;
+            }).ToList();
+
+            List<string> nashvilleAddresses = nashville.Buildings.
+            Select(building => building.Address).ToList();
+
+            //select is equivalent of map so want string back
+
+            //Aggregation method
+            int sum = numbers.Sum();
+            double average = numbers.Average();
         }
     }
 }
