@@ -53,6 +53,45 @@ namespace LinqIntro
                 return $"The number is {num}";
             }).ToList();
 
+            City nashville = new City()
+            {
+                Name = "Nashville"
+            };
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "NSS Building",
+                    Stories = 5,
+                    Address = "301 Plus Park Blvd"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "TPAC",
+                    Stories = 23,
+                    Address = "505 Deaderick Street"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "1505",
+                    Stories = 6,
+                    Address = "1505 Demonbreun Street"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "The Frist",
+                    Stories = 3,
+                    Address = "919 Broadway"
+            });
+
+            nashville.Buildings.Add(new Building()
+            {
+                Name = "The Batman Building",
+                    Stories = 33,
+                    Address = "333 Commerce Street"
+            });
         }
     }
 }
